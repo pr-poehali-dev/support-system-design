@@ -53,3 +53,32 @@ export interface TicketStats {
   resolved: number;
   closed: number;
 }
+
+export interface AuthUser {
+  id: string;
+  email: string;
+  name: string;
+  role: "user" | "admin" | "support";
+  avatar?: string;
+}
+
+export interface LoginData {
+  email: string;
+  password: string;
+}
+
+export interface RegisterData {
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+
+export interface Notification {
+  id: string;
+  title: string;
+  message: string;
+  type: "success" | "error" | "warning" | "info";
+  createdAt: Date;
+  isRead: boolean;
+}
