@@ -6,6 +6,7 @@ import NotificationPopup from "./NotificationPopup";
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isNotificationOpen, setIsNotificationOpen] = useState(false);
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
@@ -52,14 +53,20 @@ const Navigation = () => {
 
           {/* User Menu */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" size="sm">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsNotificationOpen(true)}
+            >
               <Icon name="Bell" size={16} className="mr-2" />
               Уведомления
             </Button>
-            <Button variant="ghost" size="sm">
-              <Icon name="User" size={16} className="mr-2" />
-              Профиль
-            </Button>
+            <Link to="/login">
+              <Button variant="ghost" size="sm">
+                <Icon name="User" size={16} className="mr-2" />
+                Профиль
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -98,8 +105,8 @@ const Navigation = () => {
         )}
 
         <NotificationPopup
-          isOpen={isMobileMenuOpen}
-          onClose={() => setIsMobileMenuOpen(false)}
+          isOpen={isNotificationOpen}
+          onClose={() => setIsNotificationOpen(false)}
         />
       </div>
     </nav>
