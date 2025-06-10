@@ -46,6 +46,15 @@ const Login = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center px-4">
+      <div className="absolute top-4 left-4">
+        <Link to="/">
+          <Button variant="ghost" size="sm" className="gap-2">
+            <Icon name="ArrowLeft" size={16} />
+            На главную
+          </Button>
+        </Link>
+      </div>
+
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1 text-center">
           <div className="flex justify-center mb-4">
