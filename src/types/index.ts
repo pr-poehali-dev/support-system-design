@@ -74,6 +74,10 @@ export interface RegisterData {
   confirmPassword: string;
 }
 
+export interface ForgotPasswordData {
+  email: string;
+}
+
 export interface Notification {
   id: string;
   title: string;
