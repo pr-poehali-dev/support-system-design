@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -28,6 +29,7 @@ import Navigation from "@/components/Navigation";
 import { toast } from "sonner";
 
 const UIComponents = () => {
+  const navigate = useNavigate();
   const [switchValue, setSwitchValue] = useState(false);
   const [progressValue, setProgressValue] = useState(33);
 
@@ -61,13 +63,39 @@ const UIComponents = () => {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-3">
-                  <Button>По умолчанию</Button>
-                  <Button variant="secondary">Вторичная</Button>
-                  <Button variant="outline">Контурная</Button>
-                  <Button variant="ghost">Призрачная</Button>
-                  <Button variant="destructive">Деструктивная</Button>
-                  <Button size="sm">Маленькая</Button>
-                  <Button size="lg">Большая</Button>
+                  <Button onClick={() => navigate("/design-system")}>
+                    По умолчанию
+                  </Button>
+                  <Button
+                    variant="secondary"
+                    onClick={() => navigate("/design-system")}
+                  >
+                    Вторичная
+                  </Button>
+                  <Button
+                    variant="outline"
+                    onClick={() => navigate("/design-system")}
+                  >
+                    Контурная
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    onClick={() => navigate("/design-system")}
+                  >
+                    Призрачная
+                  </Button>
+                  <Button
+                    variant="destructive"
+                    onClick={() => navigate("/design-system")}
+                  >
+                    Деструктивная
+                  </Button>
+                  <Button size="sm" onClick={() => navigate("/design-system")}>
+                    Маленькая
+                  </Button>
+                  <Button size="lg" onClick={() => navigate("/design-system")}>
+                    Большая
+                  </Button>
                   <Button disabled>Отключенная</Button>
                 </div>
               </CardContent>
@@ -254,7 +282,7 @@ const UIComponents = () => {
                   </div>
 
                   <div>
-                    <Button onClick={showToast}>
+                    <Button onClick={() => navigate("/design-system")}>
                       <Icon name="Bell" size={16} className="mr-2" />
                       Показать уведомление
                     </Button>
